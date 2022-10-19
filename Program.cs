@@ -23,9 +23,13 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    // app.UseSwagger();
-    // app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+// Enable static file serving and default file mapping 
+app.UseDefaultFiles(); 
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
